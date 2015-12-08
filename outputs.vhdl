@@ -1,0 +1,7 @@
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+
+PACKAGE outputs IS
+    TYPE out1 IS ARRAY (31 DOWNTO 0) OF STD_ULOGIC;
+    TYPE mem IS ARRAY (31 DOWNTO 0) OF out1;
+END PACKAGE outputs;

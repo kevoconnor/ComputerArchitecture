@@ -1,0 +1,12 @@
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+
+ENTITY NOT0 IS
+    PORT(i: IN STD_LOGIC;
+	o: OUT STD_LOGIC);
+END ENTITY NOT0;
+
+ARCHITECTURE Behavior OF NOT0 IS
+    BEGIN
+	o <= (NOT i) after 5 ps;
+END ARCHITECTURE Behavior;
