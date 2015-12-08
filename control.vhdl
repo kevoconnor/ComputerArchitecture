@@ -10,12 +10,6 @@ ENTITY Control IS
 	ALUOpType: OUT STD_LOGIC_VECTOR(1 DOWNTO 0));
 END ENTITY Control;
 
-ENTITY ALUControl IS
-    PORT(OpType: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	Func: IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-	Operation: OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
-END ALUControl;
-
 ARCHITECTURE Behavior OF Control IS
     BEGIN
 	WriteRegDst <= "00"; 	-- 00=Rt, 01=Rd, 10=R[31]
@@ -69,6 +63,7 @@ ARCHITECTURE Behavior OF Control IS
 			WriteRegDst <= "01";
 			RegWrite <= '1';
 			ALUOpType <= "10";
+		END CASE;
 
 	    -- I-TYPE
 	    WHEN "001000" =>				-- addi
@@ -107,5 +102,6 @@ ARCHITECTURE Behavior OF Control IS
 		PCSrc <= "01";
 		RegWrite <= '1';
 		ALUSrc2 <= "11";
+	END CASE;
 
 END ARCHITECTURE;
