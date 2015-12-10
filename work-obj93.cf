@@ -1,4 +1,7 @@
 v 3
+file . "complement.vhdl" "20151210172154.000" "20151210122158.261":
+  entity complement at 1( 0) + 0 on 303;
+  architecture behavior of complement at 9( 176) + 0 on 304;
 file . "full_adder32.vhdl" "20151207035456.000" "20151206225458.234":
   entity full_adder32 at 1( 0) + 0 on 299;
   architecture behavior of full_adder32 at 11( 241) + 0 on 300;
@@ -97,3 +100,6 @@ file . "NOR1.vhdl" "20151203012037.000" "20151202202040.403":
 file . "full_adder.vhdl" "20151130044859.000" "20151202202343.272":
   entity full_adder at 1( 0) + 0 on 297;
   architecture behavior of full_adder at 9( 149) + 0 on 298;
+file . "NOT0.vhdl" "20151202010917.000" "20151210121051.021":
+  entity not0 at 1( 0) + 0 on 301;
+  architecture behavior of not0 at 9( 123) + 0 on 302;

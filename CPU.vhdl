@@ -9,7 +9,7 @@ ARCHITECTURE Behavior OF CPU IS
     PC: ENTITY work.PC(Behavior) PORT MAP ();
 
     -- Instruction Memory
-    InstructionMem: ENTITY work.sram(
+    InstructionMem: ENTITY work.sram64kx8() PORT MAP ();
 
     -- 32-bit Adder for PC
     Adder1: ENTITY work.32full_adder(Behavior) PORT MAP ();
@@ -54,7 +54,7 @@ ARCHITECTURE Behavior OF CPU IS
     mux4: ENTITY work.mux2to1(Behavior) PORT MAP ();
 
     -- Data Memory
-    DataMem: ENTITY work.sram(Something) PORT MAP ();
+    DataMem: ENTITY work.sram64kx8(sram_behaviour) PORT MAP ();
 
     -- Mux after Data Memory
     mux5: ENTITY work.mux2to1(Behavior) PORT MAP ();
