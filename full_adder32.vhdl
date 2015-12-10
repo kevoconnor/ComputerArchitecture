@@ -4,7 +4,7 @@ USE ieee.std_logic_1164.all;
 ENTITY full_adder32 IS
     PORT (i0, i1: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 	add_sub, s: IN STD_LOGIC;
-	over, carry: OUT STD_LOGIC;
+	over, carry, neg, zero: OUT STD_LOGIC;
 	o: OUT STD_LOGIC_VECTOR(31 DOWNTO 0));
 END ENTITY full_adder32;
 

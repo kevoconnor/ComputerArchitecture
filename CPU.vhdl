@@ -6,10 +6,10 @@ END ENTITY CPU;
 
 ARCHITECTURE Behavior OF CPU IS
     -- PC
-    PC: ENTITY work.PC(Behavior) PORT MAP ();
+    --PC: ENTITY work.PC(Behavior) PORT MAP ();
 
     -- Instruction Memory
-    InstructionMem: ENTITY work.sram64kx8() PORT MAP ();
+    --InstructionMem: ENTITY work.sram64kx8() PORT MAP ();
 
     -- 32-bit Adder for PC
     Adder1: ENTITY work.32full_adder(Behavior) PORT MAP ();
