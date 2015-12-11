@@ -18,19 +18,19 @@ ARCHITECTURE Behavior OF CPU IS
     SL1: ENTITY work.barrel_left(Behavior) PORT MAP ();
 
     -- Control Unit
-    Control: ENTITY work.control(Behavior) PORT MAP ();
+    Control: ENTITY work.control(Behavior) PORT MAP (Operation, Func, Branch, MemRead, MemWrite, RegWrite, SignExtend, ALUSrc1, ALUSrc2, MemToReg, WriteRegDst, PCSrc, ALUOpType);
 
     -- Mux before Register File
-    mux1: ENTITY work.mux2to1(Behavior) PORT MAP ();
+    mux1: ENTITY work.mux2to1(Behavior) PORT MAP (ReadReg2, WriteReg1, WriteRegDst, WriteReg);
 
     -- Register File
-    RegFile: ENTITY work.RegFile(Behavior) PORT MAP ();
+    RegFile: ENTITY work.RegFile(Behavior) PORT MAP (Reg1, Reg2, WriteReg, );
 
     -- Sign Extend
     SignExtend: ENTITY work.SignExtend(Behavior) PORT MAP ();
 
     -- ALU Control Unit
-    ALUControl: ENTITY work.ALUControl(Behavior) PORT MAP ();
+    ALUControl: ENTITY work.ALUControl(Behavior) PORT MAP (ALUOpType, Funct, Operation);
 
     -- Mux before ALU
     mux2: ENTITY work.mux2to1(Behavior) PORT MAP ();

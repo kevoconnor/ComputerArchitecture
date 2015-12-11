@@ -1,19 +1,34 @@
 v 3
-file . "complement.vhdl" "20151210172154.000" "20151210122158.261":
-  entity complement at 1( 0) + 0 on 303;
-  architecture behavior of complement at 9( 176) + 0 on 304;
+file . "complement_tb.vhdl" "20151211041812.000" "20151210231814.574":
+  entity complement_tb at 1( 0) + 0 on 391;
+  architecture test of complement_tb at 7( 88) + 0 on 392;
+file . "nand32_tb.vhdl" "20151211041014.000" "20151210231312.230":
+  entity nand32_tb at 1( 0) + 0 on 387;
+  architecture test of nand32_tb at 7( 80) + 0 on 388;
+file . "nor32_tb.vhdl" "20151211040453.000" "20151210230501.423":
+  entity nor32_tb at 1( 0) + 0 on 375;
+  architecture test of nor32_tb at 7( 78) + 0 on 376;
+file . "xor32_tb.vhdl" "20151211000513.000" "20151210190531.223":
+  entity xor32_tb at 1( 0) + 0 on 363;
+  architecture test of xor32_tb at 7( 78) + 0 on 364;
+file . "sram_tb.vhdl" "20151210223335.000" "20151210173813.509":
+  entity sram_tb at 1( 0) + 0 on 325;
+  architecture test of sram_tb at 7( 76) + 0 on 326;
+file . "complement.vhdl" "20151210173627.000" "20151210231729.618":
+  entity complement at 1( 0) + 0 on 389;
+  architecture behavior of complement at 9( 176) + 0 on 390;
 file . "full_adder32.vhdl" "20151207035456.000" "20151206225458.234":
   entity full_adder32 at 1( 0) + 0 on 299;
   architecture behavior of full_adder32 at 11( 241) + 0 on 300;
-file . "NAND1.vhdl" "20151203012156.000" "20151202202158.173":
-  entity nand1 at 1( 0) + 0 on 295;
-  architecture behavior of nand1 at 9( 171) + 0 on 296;
-file . "NAND0.vhdl" "20151125222107.000" "20151202201747.683":
-  entity nand0 at 1( 0) + 0 on 291;
-  architecture behavior of nand0 at 9( 131) + 0 on 292;
-file . "XOR1.vhdl" "20151203011540.000" "20151202201545.942":
-  entity xor1 at 1( 0) + 0 on 287;
-  architecture behavior of xor1 at 9( 169) + 0 on 288;
+file . "NAND1.vhdl" "20151203012156.000" "20151210231034.828":
+  entity nand1 at 1( 0) + 0 on 379;
+  architecture behavior of nand1 at 9( 171) + 0 on 380;
+file . "NAND0.vhdl" "20151125222107.000" "20151210231025.333":
+  entity nand0 at 1( 0) + 0 on 377;
+  architecture behavior of nand0 at 9( 131) + 0 on 378;
+file . "XOR1.vhdl" "20151210235347.000" "20151210190520.090":
+  entity xor1 at 1( 0) + 0 on 361;
+  architecture behavior of xor1 at 9( 169) + 0 on 362;
 file . "barrel_right.vhdl" "20151203011048.000" "20151202201049.943":
   entity barrel_right at 1( 0) + 0 on 283;
   architecture behavior of barrel_right at 11( 239) + 0 on 284;
@@ -29,9 +44,9 @@ file . "testbench4d.vhdl" "20151016171656.000" "20151016131705.254":
 file . "testbench16.vhdl" "20151016165511.000" "20151016125512.828":
   entity sixteen2one_tb at 1( 0) + 0 on 188;
   architecture test of sixteen2one_tb at 7( 90) + 0 on 189;
-file . "OR0.vhdl" "20151125222107.000" "20151210160529.392":
-  entity or0 at 1( 0) + 0 on 307;
-  architecture behavior of or0 at 9( 133) + 0 on 308;
+file . "OR0.vhdl" "20151125222107.000" "20151210175545.613":
+  entity or0 at 1( 0) + 0 on 335;
+  architecture behavior of or0 at 9( 133) + 0 on 336;
 file . "dec4to16.vhdl" "20151020033751.000" "20151029233617.069":
   entity dec4to16 at 1( 0) + 0 on 242;
   architecture behavior of dec4to16 at 9( 196) + 0 on 243;
@@ -56,9 +71,9 @@ file . "dec2to4.vhdl" "20151020033751.000" "20151029233557.615":
 file . "dec5to32.vhdl" "20151020033751.000" "20151029233627.390":
   entity dec5to32 at 1( 0) + 0 on 244;
   architecture behavior of dec5to32 at 9( 270) + 0 on 245;
-file . "AND0.vhdl" "20151125222106.000" "20151210160426.845":
-  entity and0 at 1( 0) + 0 on 305;
-  architecture behavior of and0 at 9( 128) + 0 on 306;
+file . "AND0.vhdl" "20151125222106.000" "20151210175643.019":
+  entity and0 at 1( 0) + 0 on 337;
+  architecture behavior of and0 at 9( 128) + 0 on 338;
 file . "edge_dff.vhdl" "20151021020454.000" "20151029163334.322":
   entity edge_dff at 1( 0) + 0 on 230;
   architecture behavior of edge_dff at 9( 141) + 0 on 231;
@@ -88,18 +103,28 @@ file . "outputs.vhdl" "20151104034843.000" "20151103231329.588":
 file . "barrel_left.vhdl" "20151203010925.000" "20151202200927.489":
   entity barrel_left at 1( 0) + 0 on 281;
   architecture behavior of barrel_left at 11( 237) + 0 on 282;
-file . "XOR0.vhdl" "20151125222107.000" "20151202201213.555":
-  entity xor0 at 1( 0) + 0 on 285;
-  architecture behavior of xor0 at 9( 129) + 0 on 286;
-file . "NOR0.vhdl" "20151125222107.000" "20151202201732.885":
-  entity nor0 at 1( 0) + 0 on 289;
-  architecture behavior of nor0 at 9( 129) + 0 on 290;
-file . "NOR1.vhdl" "20151203012037.000" "20151202202040.403":
-  entity nor1 at 1( 0) + 0 on 293;
-  architecture behavior of nor1 at 9( 169) + 0 on 294;
+file . "XOR0.vhdl" "20151210235132.000" "20151210185226.875":
+  entity xor0 at 1( 0) + 0 on 353;
+  architecture behavior of xor0 at 9( 129) + 0 on 354;
+file . "NOR0.vhdl" "20151125222107.000" "20151210190749.290":
+  entity nor0 at 1( 0) + 0 on 369;
+  architecture behavior of nor0 at 9( 129) + 0 on 370;
+file . "NOR1.vhdl" "20151203012037.000" "20151210230256.313":
+  entity nor1 at 1( 0) + 0 on 373;
+  architecture behavior of nor1 at 9( 169) + 0 on 374;
 file . "full_adder.vhdl" "20151130044859.000" "20151202202343.272":
   entity full_adder at 1( 0) + 0 on 297;
   architecture behavior of full_adder at 9( 149) + 0 on 298;
 file . "NOT0.vhdl" "20151202010917.000" "20151210121051.021":
   entity not0 at 1( 0) + 0 on 301;
   architecture behavior of not0 at 9( 123) + 0 on 302;
+file . "sram.vhdl" "20151210173627.000" "20151210173743.691":
+  entity sram64kx8 at 27( 1177) + 0 on 322;
+  architecture sram_behaviour of sram64kx8 at 47( 1671) + 0 on 323;
+  configuration cfg_sram at 194( 5920) + 0 on 324;
+file . "nor_tb.vhdl" "20151211000732.000" "20151210190804.077":
+  entity nor_tb at 1( 0) + 0 on 371;
+  architecture test of nor_tb at 7( 74) + 0 on 372;
+file . "nand_tb.vhdl" "20151211041252.000" "20151210231258.835":
+  entity nand_tb at 1( 0) + 0 on 385;
+  architecture test of nand_tb at 7( 76) + 0 on 386;
