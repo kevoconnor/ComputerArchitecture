@@ -15,10 +15,10 @@ BEGIN
 
     PROCESS
 	TYPE pattern_type IS RECORD
-	    Operation : STD_LOGIC_VECTOR( 31 DOWNTO 26);
+	    Operation : STD_LOGIC_VECTOR(31 DOWNTO 26);
 	    Func: STD_LOGIC_VECTOR(5 DOWNTO 0);
 	    Branch, MemRead, MemWrite, RegWrite, SignExtend, ALUSrc1: STD_LOGIC;
-	    ALUSrc2, MemToReg, WriteRegDst, PCSrc, ALUOpType: STD_LOGIC_VECTOR(1 DOWNTO 0));
+	    ALUSrc2, MemToReg, WriteRegDst, PCSrc, ALUOpType: STD_LOGIC_VECTOR(1 DOWNTO 0);
 	END RECORD;
 	TYPE pattern_array IS ARRAY (NATURAL RANGE <>) OF pattern_type;
 	CONSTANT patterns: pattern_array :=
@@ -33,25 +33,25 @@ BEGIN
 	  --  Wait for the results.
 	  wait for 1 ns;
 	  --  Check the outputs.
-	  assert Branch <= patterns(j).Branch;
+	  assert Branch <= patterns(j).Branch
 	    report "bad Behavior output value" severity error;
-	  assert MemRead <= patterns(j).MemRead;
+	  assert MemRead <= patterns(j).MemRead
 	    report "bad Behavior output value" severity error;
-	  assert MemWrite <= patterns(j).MemWrite;
+	  assert MemWrite <= patterns(j).MemWrite
 	    report "bad Behavior output value" severity error;
-	  assert RegWrite <= patterns(j).RegWrite;
+	  assert RegWrite <= patterns(j).RegWrite
 	    report "bad Behavior output value" severity error;
-	  assert SignExtend <= patterns(j).SignExtend;
+	  assert SignExtend <= patterns(j).SignExtend
 	    report "bad Behavior output value" severity error;
-	  assert ALUSrc1 <= patterns(j).ALUSrc1;
+	  assert ALUSrc1 <= patterns(j).ALUSrc1
 	    report "bad Behavior output value" severity error;
-	  assert ALUSrc2 <= patterns(j).ALUSrc2;
+	  assert ALUSrc2 <= patterns(j).ALUSrc2
 	    report "bad Behavior output value" severity error;
-	  assert MemToReg <= patterns(j).MemToReg;
+	  assert MemToReg <= patterns(j).MemToReg
 	    report "bad Behavior output value" severity error;
-	  assert WriteRegDst <= patterns(j).WriteRegDst;
+	  assert WriteRegDst <= patterns(j).WriteRegDst
 	    report "bad Behavior output value" severity error;
-	  assert PCSrc <= patterns(j).PCSrc;
+	  assert PCSrc <= patterns(j).PCSrc
 	    report "bad Behavior output value" severity error;
       end loop;
       assert false report "end of test" severity note;

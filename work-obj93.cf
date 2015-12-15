@@ -1,4 +1,7 @@
 v 3
+file . "control_tb.vhdl" "20151215004457.000" "20151214194503.647":
+  entity control_tb at 1( 0) + 0 on 499;
+  architecture test of control_tb at 7( 82) + 0 on 500;
 file . "slt_tb.vhdl" "20151214234525.000" "20151214184537.392":
   entity slt_tb at 1( 0) + 0 on 495;
   architecture test of slt_tb at 7( 74) + 0 on 496;
@@ -143,3 +146,6 @@ file . "full_adder32_tb.vhdl" "20151214221533.000" "20151214183429.135":
 file . "slt32_tb.vhdl" "20151214033549.000" "20151213223831.662":
   entity slt32_tb at 1( 0) + 0 on 449;
   architecture test of slt32_tb at 7( 78) + 0 on 450;
+file . "control.vhdl" "20151215004255.000" "20151214194256.833":
+  entity control at 1( 0) + 0 on 497;
+  architecture behavior of control at 13( 340) + 0 on 498;
