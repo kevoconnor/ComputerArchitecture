@@ -23,47 +23,48 @@ ARCHITECTURE Behavior OF Control IS
 	RegWrite <= '0';	
 	ALUOpType <= "00";	-- 00=addition, 01=subtraction, 10=function input, 11=logical OR
 	SignExtend <= '0';
-
-	CASE(Operation) IS
+	
+	PROCESS(Operation)
+	BEGIN
+	CASE Operation IS
 
 	    -- R-TYPE
 	    WHEN "000000" =>
-		CASE(Func) IS
-		    WHEN "100000" =>			-- add
-			WriteRegDst <= "01";
-			RegWrite <= '1';
-		    WHEN "100001" =>			-- addu
-			WriteRegDst <= "01";
-			RegWrite <= '1';
-			ALUOpType <= "10";
-		    WHEN "001000" =>			-- jr
-			PCSrc <= "10";
-		    WHEN "100111" =>			-- nor
-			WriteRegDst <= "01";
-			RegWrite <= '1';
-			ALUOpType <= "10"
-		    WHEN "000000" =>			-- sll
-			WriteRegDst <= "01";
-			ALUSrc2 <= "10";
-			RegWrite <= '1';
-			ALUOpType <= "10";
-		    WHEN "000010" =>			-- srl
-			WriteRegDst <= "01";
-			ALUSrc2 <= "10";
-			RegWrite <= '1';
-			ALUOpType <= "10";
-		    WHEN "101010" =>			-- slt
-			WriteRegDst <= "01";
-			RegWrite <= '1';
-			ALUOpType <= "10";
-		    WHEN "100010" =>			-- sub
-			RegWrite <= '1';
-			ALUOpType <= "01";
-		    WHEN "100110" =>			-- xor
-			WriteRegDst <= "01";
-			RegWrite <= '1';
-			ALUOpType <= "10";
-		END CASE;
+		IF Func = "100000" THEN			-- add
+		    WriteRegDst <= "01";
+		    RegWrite <= '1';
+		ELSIF Func = "100001" THEN			-- addu
+		    WriteRegDst <= "01";
+		    RegWrite <= '1';
+		    ALUOpType <= "10";
+		ELSIF Func = "001000" THEN			-- jr
+		    PCSrc <= "10";
+		ELSIF Func = "100111" THEN			-- nor
+		    WriteRegDst <= "01";
+		    RegWrite <= '1';
+		    ALUOpType <= "10";
+		ELSIF Func = "000000" THEN			-- sll
+		    WriteRegDst <= "01";
+		    ALUSrc2 <= "10";
+		    RegWrite <= '1';
+		    ALUOpType <= "10";
+		ELSIF Func = "000010" THEN			-- srl
+		    WriteRegDst <= "01";
+		    ALUSrc2 <= "10";
+		    RegWrite <= '1';
+		    ALUOpType <= "10";
+		ELSIF Func = "101010" THEN			-- slt
+		    WriteRegDst <= "01";
+		    RegWrite <= '1';
+		    ALUOpType <= "10";
+		ELSIF Func = "100010" THEN			-- sub
+		    RegWrite <= '1';
+		    ALUOpType <= "01";
+		ELSE						-- xor
+		    WriteRegDst <= "01";
+		    RegWrite <= '1';
+		    ALUOpType <= "10";
+		END IF;
 
 	    -- I-TYPE
 	    WHEN "001000" =>				-- addi
@@ -103,5 +104,5 @@ ARCHITECTURE Behavior OF Control IS
 		RegWrite <= '1';
 		ALUSrc2 <= "11";
 	END CASE;
-
+	END PROCESS;
 END ARCHITECTURE;

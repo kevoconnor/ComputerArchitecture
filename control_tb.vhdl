@@ -15,11 +15,10 @@ BEGIN
 
     PROCESS
 	TYPE pattern_type IS RECORD
-	    Func: IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-	    Branch, MemRead, MemWrite, RegWrite, SignExtend,
-	    ALUSrc1: OUT STD_LOGIC;
-	    ALUSrc2, MemToReg, WriteRegDst, PCSrc,
-	    ALUOpType: OUT STD_LOGIC_VECTOR(1 DOWNTO 0));
+	    Operation : STD_LOGIC_VECTOR( 31 DOWNTO 26);
+	    Func: STD_LOGIC_VECTOR(5 DOWNTO 0);
+	    Branch, MemRead, MemWrite, RegWrite, SignExtend, ALUSrc1: STD_LOGIC;
+	    ALUSrc2, MemToReg, WriteRegDst, PCSrc, ALUOpType: STD_LOGIC_VECTOR(1 DOWNTO 0));
 	END RECORD;
 	TYPE pattern_array IS ARRAY (NATURAL RANGE <>) OF pattern_type;
 	CONSTANT patterns: pattern_array :=

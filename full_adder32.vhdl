@@ -9,12 +9,18 @@ ENTITY full_adder32 IS
 END ENTITY full_adder32;
 
 ARCHITECTURE Behavior OF full_adder32 IS
-    SIGNAL x0, x1 : STD_LOGIC_VECTOR(31 DOWNTO 0) := "00000000000000000000000000000000";
+    --SIGNAL a_s32, x0, x1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL a_s32, a_s, x0 : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL x1 : STD_LOGIC_VECTOR(0 TO 31);
     SIGNAL na, uadd_ov, add_ov, sub_ov : STD_LOGIC;
     BEGIN
-	o0: FOR i IN 0 TO 31 GENERATE
-	    o1: ENTITY work.XOR0(Behavior) PORT MAP (i1(i), add_sub, x0(i));
+	--o0: FOR i IN 0 TO 31 GENERATE
+	    --o1: ENTITY work.XOR0(Behavior) PORT MAP (i1(i), add_sub, x0(i));
+	--END GENERATE;
+	o0: FOR i IN 31 DOWNTO 0 GENERATE
+	    a_s32(i) <= add_sub;
 	END GENERATE;
+	o1: ENTITY work.XOR1(Behavior) PORT MAP (i1, a_s32, x0);
 
 	o2: ENTITY work.full_adder(Behavior) PORT MAP (i0(0), x0(0), ci, o(0), x1(0));
 	o3: FOR j IN 1 TO 30 GENERATE
