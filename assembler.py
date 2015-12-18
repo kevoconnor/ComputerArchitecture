@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-inFile = open("testPrograms.txt", 'r');
-outFile = open("output.txt", 'w');
+inFile = open("instructions.assem", 'r');
+outFile = open("sram64kx8.dat", 'w');
 
 PC = 0
 number_instruction = -4
@@ -57,7 +57,8 @@ for line in inFile:
     #funct = ""
     hexNum = hex(number_instruction)
     hexN = hexNum[2:]
-    addr = '0x'+"0"*(8-len(hexN)) + hexN
+    #addr = '0x'+"0"*(8-len(hexN)) + hexN
+    addr = "0"*(8-len(hexN)) + hexN
     if inst == "add":
 	binToHex = op + binary1 + binary2 + binary3 + shamt + "100000"
     

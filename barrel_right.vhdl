@@ -19,7 +19,7 @@ ARCHITECTURE Behavior OF barrel_right IS
     BEGIN 
 	--IF % 1
 	mux0: ENTITY work.mux2to1(Behavior) PORT MAP (i(31), c, n(0), t0(31));
-	outputs0: FOR j IN 30 DOWNTO 0 GENERATE
+	outputs0: FOR j IN 31 DOWNTO 1 GENERATE
 	    n0: ENTITY work.mux2to1(Behavior) PORT MAP (i(j), i(j-1), n(0), t0(j));
 	END GENERATE;
 	over0: ENTITY work.mux2to1(Behavior) PORT MAP (c, i(0), n(0), ov(0));
@@ -27,7 +27,7 @@ ARCHITECTURE Behavior OF barrel_right IS
 	--IF % 2
 	mux1: ENTITY work.mux2to1(Behavior) PORT MAP (i(31), c, n(1), t1(31));
 	mux2: ENTITY work.mux2to1(Behavior) PORT MAP (i(30), c, n(1), t1(30));
-	outputs1: FOR j IN 29 DOWNTO 0 GENERATE
+	outputs1: FOR j IN 31 DOWNTO 2 GENERATE
 	    n1: ENTITY work.mux2to1(Behavior) PORT MAP (i(j), i(j-2), n(1), t1(j));
 	END GENERATE;
 	over1: ENTITY work.mux2to1(Behavior) PORT MAP (c, i(1), n(1), ov(1));
@@ -38,7 +38,7 @@ ARCHITECTURE Behavior OF barrel_right IS
 	    n2_0: ENTITY work.mux2to1(Behavior) PORT MAP (i(j), c, n(2), t2(j));
 	END GENERATE;
 
-	outputs2: FOR j IN 27 DOWNTO 0 GENERATE
+	outputs2: FOR j IN 31 DOWNTO 4 GENERATE
 	    n2: ENTITY work.mux2to1(Behavior) PORT MAP (i(j), i(j-4), n(2), t2(j));
 	END GENERATE;
 
@@ -52,7 +52,7 @@ ARCHITECTURE Behavior OF barrel_right IS
 	    n3_0: ENTITY work.mux2to1(Behavior) PORT MAP (i(j), c, n(3), t3(j));
 	END GENERATE;
 
-	outputs3: FOR j IN 23 DOWNTO 0 GENERATE
+	outputs3: FOR j IN 31 DOWNTO 8 GENERATE
 	    n3: ENTITY work.mux2to1(Behavior) PORT MAP (i(j), i(j-8), n(3), t3(j));
 	END GENERATE;
 
@@ -70,7 +70,7 @@ ARCHITECTURE Behavior OF barrel_right IS
 	    n4_0: ENTITY work.mux2to1(Behavior) PORT MAP (i(j), c, n(4), o(j));
 	END GENERATE;
 
-	outputs4: FOR j IN 15 DOWNTO 0 GENERATE
+	outputs4: FOR j IN 31 DOWNTO 16 GENERATE
 	    n4: ENTITY work.mux2to1(Behavior) PORT MAP (i(j), i(j-16), n(4), o(j));
 	END GENERATE;
 

@@ -1,13 +1,31 @@
 v 3
-file . "control_tb.vhdl" "20151215004457.000" "20151214194503.647":
-  entity control_tb at 1( 0) + 0 on 499;
-  architecture test of control_tb at 7( 82) + 0 on 500;
-file . "slt_tb.vhdl" "20151214234525.000" "20151214184537.392":
-  entity slt_tb at 1( 0) + 0 on 495;
-  architecture test of slt_tb at 7( 74) + 0 on 496;
-file . "slt.vhdl" "20151214234507.000" "20151214184530.092":
-  entity slt at 1( 0) + 0 on 493;
-  architecture behavior of slt at 9( 166) + 0 on 494;
+file . "ALUControl.vhdl" "20151217171617.000" "20151217121618.949":
+  entity alucontrol at 1( 0) + 0 on 588;
+  architecture behavior of alucontrol at 10( 219) + 0 on 589;
+file . "barrel_right_test_tb.vhdl" "20151217024456.000" "20151216214746.941":
+  entity barrel_right_test_tb at 1( 0) + 0 on 575;
+  architecture test of barrel_right_test_tb at 7( 102) + 0 on 576;
+file . "barrel_left_test_tb.vhdl" "20151217022442.000" "20151216212559.646":
+  entity barrel_left_test_tb at 1( 0) + 0 on 567;
+  architecture test of barrel_left_test_tb at 7( 100) + 0 on 568;
+file . "barrel_left_test.vhdl" "20151217022544.000" "20151216212545.789":
+  entity barrel_left_test at 1( 0) + 0 on 565;
+  architecture behavior of barrel_left_test at 11( 250) + 0 on 566;
+file . "barrel_left_tb.vhdl" "20151215160300.000" "20151215110321.609":
+  entity barrel_left_tb at 1( 0) + 0 on 543;
+  architecture test of barrel_left_tb at 7( 90) + 0 on 544;
+file . "barrel_right_tb.vhdl" "20151215015850.000" "20151216205354.493":
+  entity barrel_right_tb at 1( 0) + 0 on 553;
+  architecture test of barrel_right_tb at 7( 92) + 0 on 554;
+file . "control_tb.vhdl" "20151215004457.000" "20151217215557.055":
+  entity control_tb at 1( 0) + 0 on 596;
+  architecture test of control_tb at 7( 82) + 0 on 597;
+file . "slt_tb.vhdl" "20151214234525.000" "20151214205115.443":
+  entity slt_tb at 1( 0) + 0 on 527;
+  architecture test of slt_tb at 7( 74) + 0 on 528;
+file . "slt.vhdl" "20151215015105.000" "20151214205109.175":
+  entity slt at 1( 0) + 0 on 525;
+  architecture behavior of slt at 9( 166) + 0 on 526;
 file . "complement_tb.vhdl" "20151211041812.000" "20151210231814.574":
   entity complement_tb at 1( 0) + 0 on 391;
   architecture test of complement_tb at 7( 88) + 0 on 392;
@@ -26,9 +44,9 @@ file . "sram_tb.vhdl" "20151210223335.000" "20151210173813.509":
 file . "complement.vhdl" "20151210173627.000" "20151210231729.618":
   entity complement at 1( 0) + 0 on 389;
   architecture behavior of complement at 9( 176) + 0 on 390;
-file . "full_adder32.vhdl" "20151214233341.000" "20151214183354.799":
-  entity full_adder32 at 1( 0) + 0 on 487;
-  architecture behavior of full_adder32 at 11( 253) + 0 on 488;
+file . "full_adder32.vhdl" "20151215013353.000" "20151214203356.544":
+  entity full_adder32 at 1( 0) + 0 on 513;
+  architecture behavior of full_adder32 at 11( 253) + 0 on 514;
 file . "NAND1.vhdl" "20151203012156.000" "20151210231034.828":
   entity nand1 at 1( 0) + 0 on 379;
   architecture behavior of nand1 at 9( 171) + 0 on 380;
@@ -38,9 +56,9 @@ file . "NAND0.vhdl" "20151125222107.000" "20151210231025.333":
 file . "XOR1.vhdl" "20151210235347.000" "20151213225609.714":
   entity xor1 at 1( 0) + 0 on 455;
   architecture behavior of xor1 at 9( 169) + 0 on 456;
-file . "barrel_right.vhdl" "20151203011048.000" "20151202201049.943":
-  entity barrel_right at 1( 0) + 0 on 283;
-  architecture behavior of barrel_right at 11( 239) + 0 on 284;
+file . "barrel_right.vhdl" "20151215172530.000" "20151215122533.318":
+  entity barrel_right at 1( 0) + 0 on 549;
+  architecture behavior of barrel_right at 11( 239) + 0 on 550;
 file . "RegFile.vhdl" "20151104041654.000" "20151103231659.079":
   entity regfile at 1( 0) + 0 on 267;
   architecture behavior of regfile at 12( 294) + 0 on 268;
@@ -83,9 +101,9 @@ file . "dec5to32.vhdl" "20151020033751.000" "20151029233627.390":
 file . "AND0.vhdl" "20151125222106.000" "20151213153327.316":
   entity and0 at 1( 0) + 0 on 401;
   architecture behavior of and0 at 9( 128) + 0 on 402;
-file . "edge_dff.vhdl" "20151021020454.000" "20151029163334.322":
-  entity edge_dff at 1( 0) + 0 on 230;
-  architecture behavior of edge_dff at 9( 141) + 0 on 231;
+file . "edge_dff.vhdl" "20151125222056.000" "20151216230526.813":
+  entity edge_dff at 1( 0) + 0 on 578;
+  architecture behavior of edge_dff at 9( 141) + 0 on 579;
 file . "testbench2.vhdl" "20151015015623.000" "20151016125316.332":
   entity two2one_tb at 1( 0) + 0 on 180;
   architecture test of two2one_tb at 7( 82) + 0 on 181;
@@ -104,14 +122,13 @@ file . "testbench32d.vhdl" "20151016173654.000" "20151016133856.818":
 file . "mux32x32to1.vhdl" "20151104040336.000" "20151103231336.860":
   entity mux32x32to1 at 1( 0) + 0 on 261;
   architecture behavior of mux32x32to1 at 11( 322) + 0 on 262;
-file . "registers.vhdl" "20151104041510.000" "20151103231657.436":
-  entity registers at 1( 0) + 0 on 265;
-  architecture behavior of registers at 11( 227) + 0 on 266;
-file . "outputs.vhdl" "20151104034843.000" "20151103231329.588":
-  package outputs at 1( 0) + 0 on 258;
-file . "barrel_left.vhdl" "20151203010925.000" "20151202200927.489":
-  entity barrel_left at 1( 0) + 0 on 281;
-  architecture behavior of barrel_left at 11( 237) + 0 on 282;
+file . "registers.vhdl" "20151217042116.000" "20151216232121.304":
+  entity registers at 1( 0) + 0 on 582;
+  architecture behavior of registers at 11( 227) + 0 on 583;
+  entity single_reg at 18( 451) + 0 on 584;
+  architecture behavior of single_reg at 27( 669) + 0 on 585;
+file . "outputs.vhdl" "20151125222057.000" "20151216230446.925":
+  package outputs at 1( 0) + 0 on 577;
 file . "XOR0.vhdl" "20151210235132.000" "20151213225602.292":
   entity xor0 at 1( 0) + 0 on 453;
   architecture behavior of xor0 at 9( 129) + 0 on 454;
@@ -140,12 +157,18 @@ file . "nand_tb.vhdl" "20151211041252.000" "20151210231258.835":
 file . "full_adder_tb.vhdl" "20151213194404.000" "20151213225653.468":
   entity full_adder_tb at 1( 0) + 0 on 463;
   architecture test of full_adder_tb at 7( 88) + 0 on 464;
-file . "full_adder32_tb.vhdl" "20151214221533.000" "20151214183429.135":
-  entity full_adder32_tb at 1( 0) + 0 on 489;
-  architecture test of full_adder32_tb at 7( 92) + 0 on 490;
+file . "full_adder32_tb.vhdl" "20151214221533.000" "20151214203401.771":
+  entity full_adder32_tb at 1( 0) + 0 on 515;
+  architecture test of full_adder32_tb at 7( 92) + 0 on 516;
 file . "slt32_tb.vhdl" "20151214033549.000" "20151213223831.662":
   entity slt32_tb at 1( 0) + 0 on 449;
   architecture test of slt32_tb at 7( 78) + 0 on 450;
-file . "control.vhdl" "20151215004255.000" "20151214194256.833":
-  entity control at 1( 0) + 0 on 497;
-  architecture behavior of control at 13( 340) + 0 on 498;
+file . "control.vhdl" "20151218025541.000" "20151217215544.695":
+  entity control at 1( 0) + 0 on 594;
+  architecture behavior of control at 13( 340) + 0 on 595;
+file . "barrel_right_test.vhdl" "20151217024739.000" "20151216214742.605":
+  entity barrel_right_test at 1( 0) + 0 on 573;
+  architecture behavior of barrel_right_test at 11( 252) + 0 on 574;
+file . "CPU.vhdl" "20151218030306.000" "20151217221313.838":
+  entity cpu at 1( 0) + 0 on 600;
+  architecture behavior of cpu at 7( 75) + 0 on 601;
