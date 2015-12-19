@@ -10,7 +10,6 @@ ARCHITECTURE Behavior OF CPU IS
     SIGNAL WE : STD_LOGIC := '1';
     SIGNAL pcIn : STD_LOGIC_VECTOR(31 DOWNTO 0) := "00000000000000000000000000000000";
     SIGNAL pcOut : STD_LOGIC_VECTOR(31 DOWNTO 0) := "00000000000000000000000000000000";
-    SIGNAL pcOut_in, pcIn_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL over, neg, zero, carry : STD_LOGIC;
     SIGNAL Instruction : STD_LOGIC_VECTOR(31 DOWNTO 0) := "00000000000000000000000000000000";
     SIGNAL Operation : STD_LOGIC_VECTOR(5 DOWNTO 0);
@@ -24,25 +23,26 @@ ARCHITECTURE Behavior OF CPU IS
     SIGNAL Branch, MemRead, MemWrite, RegWrite, SignExtend, ALUSrc1 : STD_LOGIC;
     SIGNAL ALUSrc2, MemToReg, WriteRegDst, PCSrc, ALUOpType : STD_LOGIC_VECTOR(1 DOWNTO 0);
     SIGNAL Op : STD_LOGIC_VECTOR(3 DOWNTO 0);
+    SIGNAL s : STD_LOGIC := '1';
     SIGNAL Extended : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL writeData, read1Data, read2Data : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL ALUIn, ALUOut : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL Adder1, Adder2 : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL mux_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL and_out : STD_LOGIC;
+    SIGNAL MemData : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL empty : STD_LOGIC_VECTOR(31 DOWNTO 0) := "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU";
 
     BEGIN
     clock <= NOT clock after 500 ps;
     -- PC
-    PCi: ENTITY work.single_reg(Behavior) PORT MAP (WE, clock, pcIn, pcOut);
-    pcOut_in <= pcOut;
-    pcIn <= pcIn_out after 1 ns;
+    PC: ENTITY work.single_reg(Behavior) PORT MAP (WE, clock, pcIn, pcOut);
+    
     -- 32-bit Adder for PC
-    Adder_1: ENTITY work.full_adder32(Behavior) PORT MAP (pcOut_in, "00000000000000000000000000000100", '0', '0', over, neg, zero, carry, pcIn_out);
+    Adder_1: ENTITY work.full_adder32(Behavior) PORT MAP (pcOut, "00000000000000000000000000000100", '0', '0', over, neg, zero, carry, pcIn);
 
     -- Instruction Memory
-    InstructionMem: ENTITY work.sram64kx8(sram_behaviour) PORT MAP ('0', pcOut_in, Instruction, '1', clock);
+    InstructionMem: ENTITY work.sram64kx8(sram_behaviour) PORT MAP ('0', pcOut, Instruction, '1', clock);
     Operation <= Instruction(31 DOWNTO 26);
     Reg1 <= Instruction(25 DOWNTO 21);
     Reg2 <= Instruction(20 DOWNTO 16);
@@ -71,7 +71,7 @@ ARCHITECTURE Behavior OF CPU IS
     RegFile: ENTITY work.RegFile(Behavior) PORT MAP (Reg1, Reg2, inWriteReg, WE, clock, writeData, read1Data, read2Data);
 
     -- Sign Extend
-    sign_extend: ENTITY work.sign_extend(Behavior) PORT MAP (Immediate, Extended);
+    sign_extend: ENTITY work.sign_extend(Behavior) PORT MAP (Immediate, s, Extended);
 
     -- ALU Control Unit
     ALUControl: ENTITY work.ALUControl(Behavior) PORT MAP (ALUOpType, Func, Op);
@@ -86,21 +86,24 @@ ARCHITECTURE Behavior OF CPU IS
     SL2: ENTITY work.barrel_left_test(Behavior) PORT MAP (Extended, "00010", Adder1);
 
     -- 32-bit Adder for ALU Result
-    Adder_2: ENTITY work.full_adder32(Behavior) PORT MAP (Adder1, pcIn_out, '0', '0', over, carry, neg, zero, Adder2);
+    Adder_2: ENTITY work.full_adder32(Behavior) PORT MAP (Adder1, pcIn, '0', '0', over, carry, neg, zero, Adder2);
 
     -- AND before muxes
     AND0: ENTITY work.AND0(Behavior) PORT MAP (Branch, zero, and_out);
 
     -- Mux after adder
-    mux3: ENTITY work.mux32x2to1(Behavior) PORT MAP (pcIn_out, Adder2, and_out, mux_out);
+    mux3: ENTITY work.mux32x2to1(Behavior) PORT MAP (pcIn, Adder2, and_out, mux_out);
 
     -- Mux after mux
-    mux4: ENTITY work.mux32x4to1(Behavior) PORT MAP (mux_out, outShift, read1Data, "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU", PCSrc, pcOut_in);
+    mux4: ENTITY work.mux32x4to1(Behavior) PORT MAP (mux_out, outShift, read1Data, "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU", PCSrc, pcOut);
+
+    -- Tri-state
+    tristate: ENTITY work.tristate(Behavior) PORT MAP (read2Data, s, MemData);
 
     -- Data Memory
-    DataMem: ENTITY work.sram64kx8(sram_behaviour) PORT MAP ('0', ALUOut, read2Data, MemRead, MemWrite);
+    DataMem: ENTITY work.sram64kx8(sram_behaviour) PORT MAP ('0', ALUOut, MemData, MemRead, MemWrite);
 
     -- Mux after Data Memory
-    mux5: ENTITY work.mux32x4to1(Behavior) PORT MAP (ALUOut, read2Data, pcOut_in, empty, MemToReg, writeData);
+    mux5: ENTITY work.mux32x4to1(Behavior) PORT MAP (ALUOut, read2Data, pcOut, empty, MemToReg, writeData);
 
 END ARCHITECTURE Behavior;
