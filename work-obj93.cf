@@ -1,4 +1,16 @@
 v 3
+file . "mux32x4to1.vhdl" "20151218160456.000" "20151218110609.054":
+  entity mux32x4to1 at 1( 0) + 0 on 668;
+  architecture behavior of mux32x4to1 at 10( 223) + 0 on 669;
+file . "ALU.vhdl" "20151218155127.000" "20151218105423.971":
+  entity alu at 1( 0) + 0 on 664;
+  architecture behavior of alu at 11( 278) + 0 on 665;
+file . "mux32x2to1.vhdl" "20151218043257.000" "20151218100905.523":
+  entity mux32x2to1 at 1( 0) + 0 on 634;
+  architecture behavior of mux32x2to1 at 10( 197) + 0 on 635;
+file . "mux5x2to1.vhdl" "20151218043306.000" "20151218100037.793":
+  entity mux5x2to1 at 1( 0) + 0 on 604;
+  architecture behavior of mux5x2to1 at 10( 193) + 0 on 605;
 file . "ALUControl.vhdl" "20151217171617.000" "20151217121618.949":
   entity alucontrol at 1( 0) + 0 on 588;
   architecture behavior of alucontrol at 10( 219) + 0 on 589;
@@ -8,9 +20,9 @@ file . "barrel_right_test_tb.vhdl" "20151217024456.000" "20151216214746.941":
 file . "barrel_left_test_tb.vhdl" "20151217022442.000" "20151216212559.646":
   entity barrel_left_test_tb at 1( 0) + 0 on 567;
   architecture test of barrel_left_test_tb at 7( 100) + 0 on 568;
-file . "barrel_left_test.vhdl" "20151217022544.000" "20151216212545.789":
-  entity barrel_left_test at 1( 0) + 0 on 565;
-  architecture behavior of barrel_left_test at 11( 250) + 0 on 566;
+file . "barrel_left_test.vhdl" "20151217223636.000" "20151218105229.787":
+  entity barrel_left_test at 1( 0) + 0 on 644;
+  architecture behavior of barrel_left_test at 11( 250) + 0 on 645;
 file . "barrel_left_tb.vhdl" "20151215160300.000" "20151215110321.609":
   entity barrel_left_tb at 1( 0) + 0 on 543;
   architecture test of barrel_left_tb at 7( 90) + 0 on 544;
@@ -23,9 +35,9 @@ file . "control_tb.vhdl" "20151215004457.000" "20151217215557.055":
 file . "slt_tb.vhdl" "20151214234525.000" "20151214205115.443":
   entity slt_tb at 1( 0) + 0 on 527;
   architecture test of slt_tb at 7( 74) + 0 on 528;
-file . "slt.vhdl" "20151215015105.000" "20151214205109.175":
-  entity slt at 1( 0) + 0 on 525;
-  architecture behavior of slt at 9( 166) + 0 on 526;
+file . "slt.vhdl" "20151215015105.000" "20151218105306.867":
+  entity slt at 1( 0) + 0 on 650;
+  architecture behavior of slt at 9( 166) + 0 on 651;
 file . "complement_tb.vhdl" "20151211041812.000" "20151210231814.574":
   entity complement_tb at 1( 0) + 0 on 391;
   architecture test of complement_tb at 7( 88) + 0 on 392;
@@ -44,24 +56,24 @@ file . "sram_tb.vhdl" "20151210223335.000" "20151210173813.509":
 file . "complement.vhdl" "20151210173627.000" "20151210231729.618":
   entity complement at 1( 0) + 0 on 389;
   architecture behavior of complement at 9( 176) + 0 on 390;
-file . "full_adder32.vhdl" "20151215013353.000" "20151214203356.544":
-  entity full_adder32 at 1( 0) + 0 on 513;
-  architecture behavior of full_adder32 at 11( 253) + 0 on 514;
-file . "NAND1.vhdl" "20151203012156.000" "20151210231034.828":
-  entity nand1 at 1( 0) + 0 on 379;
-  architecture behavior of nand1 at 9( 171) + 0 on 380;
-file . "NAND0.vhdl" "20151125222107.000" "20151210231025.333":
-  entity nand0 at 1( 0) + 0 on 377;
-  architecture behavior of nand0 at 9( 131) + 0 on 378;
+file . "full_adder32.vhdl" "20151215013353.000" "20151218105154.815":
+  entity full_adder32 at 1( 0) + 0 on 640;
+  architecture behavior of full_adder32 at 11( 253) + 0 on 641;
+file . "NAND1.vhdl" "20151203012156.000" "20151218105414.379":
+  entity nand1 at 1( 0) + 0 on 662;
+  architecture behavior of nand1 at 9( 171) + 0 on 663;
+file . "NAND0.vhdl" "20151125222107.000" "20151218105348.716":
+  entity nand0 at 1( 0) + 0 on 658;
+  architecture behavior of nand0 at 9( 131) + 0 on 659;
 file . "XOR1.vhdl" "20151210235347.000" "20151213225609.714":
   entity xor1 at 1( 0) + 0 on 455;
   architecture behavior of xor1 at 9( 169) + 0 on 456;
 file . "barrel_right.vhdl" "20151215172530.000" "20151215122533.318":
   entity barrel_right at 1( 0) + 0 on 549;
   architecture behavior of barrel_right at 11( 239) + 0 on 550;
-file . "RegFile.vhdl" "20151104041654.000" "20151103231659.079":
-  entity regfile at 1( 0) + 0 on 267;
-  architecture behavior of regfile at 12( 294) + 0 on 268;
+file . "RegFile.vhdl" "20151125222057.000" "20151218100459.256":
+  entity regfile at 1( 0) + 0 on 630;
+  architecture behavior of regfile at 12( 294) + 0 on 631;
 file . "testbench16d.vhdl" "20151016172127.000" "20151016132236.911":
   entity four2sixteen_tb at 1( 0) + 0 on 204;
   architecture test of four2sixteen_tb at 7( 92) + 0 on 205;
@@ -74,30 +86,30 @@ file . "testbench16.vhdl" "20151016165511.000" "20151016125512.828":
 file . "OR0.vhdl" "20151125222107.000" "20151210175545.613":
   entity or0 at 1( 0) + 0 on 335;
   architecture behavior of or0 at 9( 133) + 0 on 336;
-file . "dec4to16.vhdl" "20151020033751.000" "20151029233617.069":
-  entity dec4to16 at 1( 0) + 0 on 242;
-  architecture behavior of dec4to16 at 9( 196) + 0 on 243;
-file . "mux32to1.vhdl" "20151125222056.000" "20151202200848.577":
-  entity mux32to1 at 1( 0) + 0 on 279;
-  architecture behavior of mux32to1 at 9( 263) + 0 on 280;
-file . "mux4to1.vhdl" "20151125222057.000" "20151213153347.972":
-  entity mux4to1 at 1( 0) + 0 on 405;
-  architecture behavior of mux4to1 at 9( 146) + 0 on 406;
-file . "mux2to1.vhdl" "20151125222107.000" "20151213153338.998":
-  entity mux2to1 at 1( 0) + 0 on 403;
-  architecture behavior of mux2to1 at 9( 138) + 0 on 404;
-file . "mux16to1.vhdl" "20151125222056.000" "20151202200843.261":
-  entity mux16to1 at 1( 0) + 0 on 277;
-  architecture behavior of mux16to1 at 9( 196) + 0 on 278;
-file . "dec1to2.vhdl" "20151020033751.000" "20151029233534.330":
-  entity dec1to2 at 1( 0) + 0 on 238;
-  architecture behavior of dec1to2 at 9( 138) + 0 on 239;
-file . "dec2to4.vhdl" "20151020033751.000" "20151029233557.615":
-  entity dec2to4 at 1( 0) + 0 on 240;
-  architecture behavior of dec2to4 at 9( 146) + 0 on 241;
-file . "dec5to32.vhdl" "20151020033751.000" "20151029233627.390":
-  entity dec5to32 at 1( 0) + 0 on 244;
-  architecture behavior of dec5to32 at 9( 270) + 0 on 245;
+file . "dec4to16.vhdl" "20151125222055.000" "20151218100251.346":
+  entity dec4to16 at 1( 0) + 0 on 616;
+  architecture behavior of dec4to16 at 9( 196) + 0 on 617;
+file . "mux32to1.vhdl" "20151125222056.000" "20151218100432.748":
+  entity mux32to1 at 1( 0) + 0 on 626;
+  architecture behavior of mux32to1 at 9( 263) + 0 on 627;
+file . "mux4to1.vhdl" "20151125222057.000" "20151218100411.577":
+  entity mux4to1 at 1( 0) + 0 on 622;
+  architecture behavior of mux4to1 at 9( 146) + 0 on 623;
+file . "mux2to1.vhdl" "20151125222107.000" "20151218100402.415":
+  entity mux2to1 at 1( 0) + 0 on 620;
+  architecture behavior of mux2to1 at 9( 138) + 0 on 621;
+file . "mux16to1.vhdl" "20151125222056.000" "20151218100422.047":
+  entity mux16to1 at 1( 0) + 0 on 624;
+  architecture behavior of mux16to1 at 9( 196) + 0 on 625;
+file . "dec1to2.vhdl" "20151125222055.000" "20151218100223.442":
+  entity dec1to2 at 1( 0) + 0 on 612;
+  architecture behavior of dec1to2 at 9( 138) + 0 on 613;
+file . "dec2to4.vhdl" "20151125222055.000" "20151218100240.863":
+  entity dec2to4 at 1( 0) + 0 on 614;
+  architecture behavior of dec2to4 at 9( 146) + 0 on 615;
+file . "dec5to32.vhdl" "20151125222055.000" "20151218100303.689":
+  entity dec5to32 at 1( 0) + 0 on 618;
+  architecture behavior of dec5to32 at 9( 270) + 0 on 619;
 file . "AND0.vhdl" "20151125222106.000" "20151213153327.316":
   entity and0 at 1( 0) + 0 on 401;
   architecture behavior of and0 at 9( 128) + 0 on 402;
@@ -119,14 +131,14 @@ file . "testbench32.vhdl" "20151016171038.000" "20151016131041.323":
 file . "testbench32d.vhdl" "20151016173654.000" "20151016133856.818":
   entity five2thirtytwo_tb at 1( 0) + 0 on 208;
   architecture test of five2thirtytwo_tb at 7( 96) + 0 on 209;
-file . "mux32x32to1.vhdl" "20151104040336.000" "20151103231336.860":
-  entity mux32x32to1 at 1( 0) + 0 on 261;
-  architecture behavior of mux32x32to1 at 11( 322) + 0 on 262;
-file . "registers.vhdl" "20151217042116.000" "20151216232121.304":
-  entity registers at 1( 0) + 0 on 582;
-  architecture behavior of registers at 11( 227) + 0 on 583;
-  entity single_reg at 18( 451) + 0 on 584;
-  architecture behavior of single_reg at 27( 669) + 0 on 585;
+file . "mux32x32to1.vhdl" "20151125222057.000" "20151218100444.379":
+  entity mux32x32to1 at 1( 0) + 0 on 628;
+  architecture behavior of mux32x32to1 at 11( 322) + 0 on 629;
+file . "registers.vhdl" "20151217042116.000" "20151218100158.088":
+  entity registers at 1( 0) + 0 on 608;
+  architecture behavior of registers at 11( 227) + 0 on 609;
+  entity single_reg at 18( 451) + 0 on 610;
+  architecture behavior of single_reg at 27( 669) + 0 on 611;
 file . "outputs.vhdl" "20151125222057.000" "20151216230446.925":
   package outputs at 1( 0) + 0 on 577;
 file . "XOR0.vhdl" "20151210235132.000" "20151213225602.292":
@@ -166,9 +178,18 @@ file . "slt32_tb.vhdl" "20151214033549.000" "20151213223831.662":
 file . "control.vhdl" "20151218025541.000" "20151217215544.695":
   entity control at 1( 0) + 0 on 594;
   architecture behavior of control at 13( 340) + 0 on 595;
-file . "barrel_right_test.vhdl" "20151217024739.000" "20151216214742.605":
-  entity barrel_right_test at 1( 0) + 0 on 573;
-  architecture behavior of barrel_right_test at 11( 252) + 0 on 574;
-file . "CPU.vhdl" "20151218030306.000" "20151217221313.838":
-  entity cpu at 1( 0) + 0 on 600;
-  architecture behavior of cpu at 7( 75) + 0 on 601;
+file . "barrel_right_test.vhdl" "20151217024739.000" "20151218105245.580":
+  entity barrel_right_test at 1( 0) + 0 on 646;
+  architecture behavior of barrel_right_test at 11( 252) + 0 on 647;
+file . "CPU.vhdl" "20151218164222.000" "20151218114224.635":
+  entity cpu at 1( 0) + 0 on 682;
+  architecture behavior of cpu at 7( 75) + 0 on 683;
+file . "mux5x4to1.vhdl" "20151218150026.000" "20151218100059.963":
+  entity mux5x4to1 at 1( 0) + 0 on 606;
+  architecture behavior of mux5x4to1 at 10( 222) + 0 on 607;
+file . "sign_extend.vhdl" "20151218144542.000" "20151218100723.838":
+  entity sign_extend at 1( 0) + 0 on 632;
+  architecture behavior of sign_extend at 9( 178) + 0 on 633;
+file . "zerobit.vhdl" "20151218152754.000" "20151218102759.125":
+  entity zerobit at 1( 0) + 0 on 636;
+  architecture behavior of zerobit at 9( 150) + 0 on 637;

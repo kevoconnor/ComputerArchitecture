@@ -1,0 +1,9 @@
+TestPrograms
+	Write test for all instructions
+Single Cycle
+	Mux before ALU / ALUSrc
+	Tristate before DataMem
+	Sign/zero extend
+	PC cycles
+	Jump address (no shift, append PC(31 DOWNTO 28)
+	Branch address PC + 4 + BranchAddr
