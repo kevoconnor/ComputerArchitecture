@@ -1,6 +1,34 @@
-add $r1, 1, 0
-add $r2, $r1, 0
-sub $r3, $r2, $r1
-addi $r4, $r3, 255
-nor $r5, $r4, $r3
-sll $r6, $r5, 31
+addi $1 $0 000e
+addui $2 $0 0001
+addu $3 $2 $1
+add $4 $2 $3
+addi $5 $0 0010
+sub $6 $5 $4
+
+addi $7 $0 0004
+sll $8 $7 2
+srl $9 $8 4
+slt $10 $9 $8
+
+addi $11 $0 5555
+addi $12 $0 aaaa
+nor $13 $12 $11
+ori $14 $12 $11
+xor $15 $12 $11
+sub $16 $15 $14
+
+lw $17 4($0)
+halt
+sw $17 8($0)
+halt
+
+jal 0018
+add $0 $0 $0
+j 0019
+jr $31
+halt
+beq $0 $0 2
+add $0 $0 $0
+add $0 $0 $0
+add $0 $0 $0
+halt
